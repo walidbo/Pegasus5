@@ -1,0 +1,45 @@
+{% extends 'Admin/base.html.twig' %}
+
+{% block body %}
+    <div class="row page-titles">
+        <div class="col-md-5 align-self-center">
+            <h4 class="text-themecolor">Cards</h4>
+        </div>
+        <div class="col-md-7 align-self-center text-right">
+            <div class="d-flex justify-content-end align-items-center">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                    <li class="breadcrumb-item active">Cards</li>
+                </ol>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-12 m-t-30">
+            <h4 class="m-b-0">Roles</h4>
+            <p class="text-muted m-t-0 font-12"> Role N° {{ role.id  }}</p>
+            <div class="card-columns">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h4 class="card-title">{{ role.id }}</h4>
+                        <p class="card-text">{{ role.nom  }}</p>
+
+                        <a href="{{ path('role_index') }}" ><button type="button" class="btn waves-effect waves-light btn-rounded btn-danger">List</button></a>
+
+                        <a href="{{ path('role_edit', { 'id': role.id }) }}" ><button type="button" class="btn waves-effect waves-light btn-rounded btn-warning">Edit</button></a>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+{% endblock %}

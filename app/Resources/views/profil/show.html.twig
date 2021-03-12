@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Profil</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ profil.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ profil.name }}</td>
+            </tr>
+            <tr>
+                <th>Sname</th>
+                <td>{{ profil.sname }}</td>
+            </tr>
+            <tr>
+                <th>Adress</th>
+                <td>{{ profil.adress }}</td>
+            </tr>
+            <tr>
+                <th>Cin</th>
+                <td>{{ profil.cin }}</td>
+            </tr>
+            <tr>
+                <th>Tel</th>
+                <td>{{ profil.tel }}</td>
+            </tr>
+            <tr>
+                <th>Other</th>
+                <td>{{ profil.other }}</td>
+            </tr>
+            <tr>
+                <th>Code</th>
+                <td>{{ profil.code }}</td>
+            </tr>
+            <tr>
+                <th>Adressdata</th>
+                <td>{{ profil.adressdata }}</td>
+            </tr>
+            <tr>
+                <th>Zone</th>
+                <td>{{ profil.zone }}</td>
+            </tr>
+            <tr>
+                <th>City</th>
+                <td>{{ profil.city }}</td>
+            </tr>
+            <tr>
+                <th>State</th>
+                <td>{{ profil.state }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('profil_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('profil_edit', { 'id': profil.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

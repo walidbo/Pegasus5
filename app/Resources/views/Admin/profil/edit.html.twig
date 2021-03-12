@@ -1,0 +1,108 @@
+{% extends 'Admin/base.html.twig' %}
+
+{% block body %}
+<div class="row page-titles">
+    <div class="col-md-5 align-self-center">
+        <h4 class="text-themecolor">Profiles Edit</h4>
+    </div>
+    <div class="col-md-7 align-self-center text-right">
+        <div class="d-flex justify-content-end align-items-center">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
+                <li class="breadcrumb-item active">Profile</li>
+                <li class="breadcrumb-item active">Edit</li>
+            </ol>
+
+            <a href="{{ path('profil_index') }}">  <button type="button" class="btn btn-info d-none d-lg-block m-l-15"><i class="fa fa-plus-circle"></i>List</button></a>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="card card-body">
+            <h4 class="card-title">Edit Profile</h4>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card card-body">
+                        <h4 class="card-title">Profile</h4>
+
+                        {{ form_start(edit_form,{'attr':{'class':'frm-horizontal mt-4'}}) }}
+
+                        <div class="form-group">
+                            <label>Name</span></label>
+                            {{ form_widget(edit_form.name,{'attr':{'class':'form-control','id':'Formule','type':'text','placeholder':'Foulen'}}) }}
+                        </div>
+
+
+                        <div class="form-group">
+                            <label>Second Name</label>
+                            {{ form_widget(edit_form.sname,{'attr':{'class':'form-control','id':'Classe','type':'text','placeholder':'Ben Foulen'}}) }}
+                        </div>
+                        <div class="form-group">
+                            <label>Address</label>
+
+                            {{ form_widget(edit_form.adress,{'attr':{'class':'form-control','id':'Etudent','type':'text','placeholder':'XXXXXXX , ZIP :XXX'}}) }}
+
+                        </div>
+
+                        <div class="form-group">
+                            <label>CIN</label>
+
+                            {{ form_widget(edit_form.cin,{'attr':{'class':'form-control','id':'Prof','type':'text','placeholder':'XXXXXXXX'}}) }}
+
+                        </div>
+
+                        <div class="form-group">
+                            <label>Tel</label>
+
+                            {{ form_widget(edit_form.tel,{'attr':{'class':'form-control','id':'note','type':'text','placeholder':'+216 XX XXX XXX'}}) }}
+
+                        </div>
+
+                        <div class="form-group">
+                            <label>Other</label>
+
+                            {{ form_widget(edit_form.other,{'attr':{'class':'form-control','id':'remarque','type':'text','placeholder':'...'}}) }}
+
+                        </div>
+
+
+                        <div class="form-group">
+                            <label>Role</label>
+
+                            {{ form_widget(edit_form.idrole,{'attr':{'class':'form-control','id':'idmatiere','type':'ChoiceType'}}) }}
+
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <label>User</label>
+
+                            {{ form_widget(edit_form.iduser,{'attr':{'class':'form-control','id':'idmatiere','type':'ChoiceType'}}) }}
+
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            {{ form_widget(edit_form) }}
+            <input class="btn btn-rounded btn-block btn-success"  type="submit" value="Update" />
+            {{ form_end(edit_form) }}
+            <br>
+            {{ form_start(delete_form) }}
+            <input class="btn btn-rounded btn-block btn-dark" type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+{% endblock %}
